@@ -69,10 +69,6 @@ function calcDogYears(age) {
 // calcDogYears();
 
 
-var myString = "lalala";
-
-myString.toUpperCase();
-
 
 
 
