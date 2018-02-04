@@ -1,127 +1,57 @@
-// // var yes = false;
-// 
-// // console.log(yes);
-// 
-// { //Block A
-//   { //Block B
-//     {//Block C
-//       {
-//         {
-// 
-//         }
-//       }
-//     }
-//   }
-// }
-// {
-//   // let firstNumber;
-//   // firstNumber = 22;
-//   let firstNumber = 22; //Declaration and definition
-//   // console.log(firstNumber);
-// }
-// 
-// var secondNumber = 11;
-// 
-// secondNumber = 1111;
-// 
-// 
-// // console.log(secondNumber);
-// 
-// // console.log('testing testing');
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// // 
-// // 
-// // firstNumber = "hey there, 344";
-// // console.log(firstNumber);
-// {
-//   let truth = "Ep8 was....TERRIBLE...";
-//   // console.log(truth);
-// }
-// 
-// var truth = "ep8 was...meh...";
-// // console.log(truth);
-// 
-// let rightNow = new Date();
-// // console.log(Date.parse(rightNow));
-// 
-// var iLikePi = Math.PI;
-// // console.log(iLikePi);
-// 
-// var number = 6;
-// 
-// var objNumber = new Number("");
-// // 
-// // console.log(number);
-// // console.log(objNumber);
-// 
-// 
-// 
-// 
-// 
-// //
-// var myArray = ["Hello World", 22, true, {}, null];
-// // console.log(myArray.length);
-// 
-// 
-// 
-// 
-// 
-// var myObject = {
-//   myString: "Hello World",
-//   magicNumber: 42
-// };
-// 
-// // let alertMessage = alert("Hey, there! My book is only $9.99....");
-// // let confirmMessage = confirm("Is your name Jesus?");
-// let promptMessage = prompt("Tell me the password...", "password");
-// console.log(promptMessage);
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// //
-const firstName = prompt("What is your first name?", "Maria");
-const lastName = prompt("WHat is your last name?", "is the best...duh");
-console.log(firstName);
-alert(lastName);
-let birthday = prompt("What's your birthday?", "Please answer in the following format: 1/1/1900");
-confirm(new Date(birthday));
+/*
+Accept 2 arguments (age of person now, amount of product per day).
+Calculate the supply needed for the rest of the user's life, based on a constant max age of 80.
+Alert the answer in this format: "You will need x to last you until you're y.
+*/
+
+function calcLifetimeSupply(age, perDay) {
+  let testArr = [age, perDay];
+  if(testForInts(testArr)) {
+    var lifeTime = (80 - age) * (365 * perDay);
+    alert(`you will need ${lifeTime} ${supplyOf} to last until you're 80.`);
+  } else {
+    var age = prompt("How old are you?");
+    var daily = prompt("How much do you use per day?");
+    lifeTime = calcLifetimeSupply(age, daily);
+  }
+}
+
+var supplyOf = prompt("What do you want a lifetime supply of?", 'hamburgers');
+var age = prompt("How old are you?");
+var daily = prompt("How much do you use per day?");
+var lifeTime;
+
+// calcLifetimeSupply(age, daily);
+
+//Test my inputs
+function testForInts(args) {
+  var passed = true;
+  for(let i = 0; i < args.length; i++) {
+    if(isNaN(parseInt(args[i]))) {
+      passed = false;
+    } 
+  }
+  return passed;
+}
 
 
 
-//This is my gh-pages branch 
+// BONUS: write it to accept a dynamic max age.
 
-//
+function calcLifetimeSupplyWithMaxAge(age, perDay, ageOfDeath) {
+  console.log('in right fn');
+  let testArr = [age, perDay, ageOfDeath]
+  if(testForInts(testArr)) {
+    var lifeTime = (ageOfDeath - age) * (365 * perDay);
+    alert(`You will need ${lifeTime} ${supplyOf} to last until you're ${ageOfDeath}.`);
+  } else {
+    var age = prompt("How old are you?");
+    var daily = prompt("How much do you use per day?");
+    var ageOfDeath = prompt("how old you gonna life to?");
+    lifeTime = calcLifetimeSupplyWithMaxAge(age, daily, ageOfDeath);
+  }
+}
+
+var death = prompt("How old will you be doe?");
+
+calcLifetimeSupplyWithMaxAge(age, daily, death);
