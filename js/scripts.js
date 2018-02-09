@@ -43,66 +43,66 @@
 //     alert('Please answer with a valid color.');
 // }
 // 
+// // 
+// // var arr = [1, 2, 3, 4, 5];
+// // 
+// // if(arr.indexOf(6) !== -1) {
+// //   //Do some logic here
+// // } else {
+// //   //Do some err checking here
+// // }
 // 
-// var arr = [1, 2, 3, 4, 5];
+// //Step 1. 
 // 
-// if(arr.indexOf(6) !== -1) {
-//   //Do some logic here
-// } else {
-//   //Do some err checking here
+// var numbaOne = ["Star Wars VI", "Luke Skywalker"];
+// var numbaTwo = ["Stay", "Henry Letham"];
+// var numbaThree = ["Indiana Jones and the Temple of Doom", "Indiana Jones"];
+// var numbaFour = ["Blade Runner", "Rick Deckard"];
+// var numbaFive = ["The Godfather", "Vito Corleone"];
+// 
+// //step 2:
+// var favMovies = [];
+// favMovies.push(numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive);
+// console.log(favMovies);
+// 
+// 
+// 
+// // step 3
+// // fav and least fav with console.log
+// var favAndLeastfav = [];
+// favAndLeastfav.push(numbaOne, numbaTwo);
+// 
+// 
+// 
+// 
+// 
+// 
+// //step 4 Check lenght of favorites with alert
+// // alert(favAndLeastfav);
+// //WHILE LOOP
+// // let i = 0;
+// 
+// while (i < favMovies.length) {
+//   // console.log(favMovies[i]);
+//   i++;
 // }
-
-//Step 1. 
-
-var numbaOne = ["Star Wars VI", "Luke Skywalker"];
-var numbaTwo = ["Stay", "Henry Letham"];
-var numbaThree = ["Indiana Jones and the Temple of Doom", "Indiana Jones"];
-var numbaFour = ["Blade Runner", "Rick Deckard"];
-var numbaFive = ["The Godfather", "Vito Corleone"];
-
-//step 2:
-var favMovies = [];
-favMovies.push(numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive);
-console.log(favMovies);
-
-
-
-// step 3
-// fav and least fav with console.log
-var favAndLeastfav = [];
-favAndLeastfav.push(numbaOne, numbaTwo);
-
-
-
-
-
-
-//step 4 Check lenght of favorites with alert
-// alert(favAndLeastfav);
-//WHILE LOOP
-// let i = 0;
-
-while (i < favMovies.length) {
-  // console.log(favMovies[i]);
-  i++;
-}
-
-
-//FOR LOOP
-for(let i = 0; i < favMovies.length; i++) {
-  if(favMovies[i][0].toUpperCase() === "star wars vi") {
-    alert(`${favMovies[i][0]} is my favorite movie with ${favMovies[i][1]}.`);
-  }
-}
-
-
-//DO WHILE
-var i = 0;
-
-do {
-  console.log(favMovies[i]);
-  i++;
-} while(i < favMovies.length);
+// 
+// 
+// //FOR LOOP
+// for(let i = 0; i < favMovies.length; i++) {
+//   if(favMovies[i][0].toUpperCase() === "star wars vi") {
+//     alert(`${favMovies[i][0]} is my favorite movie with ${favMovies[i][1]}.`);
+//   }
+// }
+// 
+// 
+// //DO WHILE
+// var i = 0;
+// 
+// do {
+//   console.log(favMovies[i]);
+//   i++;
+// } while(i < favMovies.length);
 
 
 
@@ -123,9 +123,22 @@ do {
 
 
 
+var todo = [["eat", new Date("2/13/2018")], ["sleep", new Date("2/9/2018")]];
+
+let i = 0;
+while(i < todo.length) {
+  var oneDay = 24*60*60*1000;
+  var now = new Date().getTime();
+  var todoMs = todo[i][1].getTime();
+  var difference = Math.floor((todoMs - now)/oneDay);  
+    todo[i].unshift(difference);
+  i++;
+}
 
 
+todo.sort();
 
+console.log(todo[todo.length - 1]);
 
 
 
